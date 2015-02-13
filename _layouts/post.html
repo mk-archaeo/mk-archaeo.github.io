@@ -9,7 +9,7 @@ layout: default
 </div>
 
 <div id="tags">
-  <p>Tags: {{ page.tags }}</p>
+  <p>Tags: {% for tag in page.tags %} <a target="_blank" href=""> {{ tag }} </a> / {% endfor %}</p>
 </div>
 
 <div id="related">
@@ -20,3 +20,4 @@ layout: default
     {% endfor %}
   </ul>
 </div>
+
