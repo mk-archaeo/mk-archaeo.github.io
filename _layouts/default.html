@@ -1,35 +1,95 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ page.title }}</title>
-    <meta name="author" content="ME" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My thoughts about...">
+    <meta name="author" content="MK">
 
     <!-- Homepage CSS -->
     <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="/scripts/TagsToHref.js"></script>
   </head>
 
   <body>
     <div class="site">
-      <div class="title">
-        <a href="/">Gedanken und Notizen zu...</a>
-        <p>Open Source, GIS, Archäologie...</p>
+      <div class="title" style="position: relative;">
+        <div id="map"></div>
+        <div class="container">
+          <h1><a href="/">Gedanken und Notizen zu...</a></h1>
+          <p>Open Source, GIS, Archäologie...</p>
+          <div id="terrain_attribution">
+            <p style="float: right"><a href="#" onclick="toggle(terrain_attribution)">&#215;</a></p>
+            <p>Terrain map data</p>
+            <ul>
+              <li>GTOPO30</li>
+              <li>SRTM &copy; <a href='http://nasa.gov'>NASA</a></li>
+              <li>EUDEM &copy; Produced using Copernicus data and information<br/>funded by the European Union - EU-DEM layers</li>
+              <li>CleanTOPO2 public domain</li>
+              <li>GlobCover &copy; <a href='http://esa.int'>ESA</a></li>
+              <li>NaturalEarth <a href='http://www.naturalearthdata.com/about/terms-of-use/'>public domain</a></li>
+              <li>OpenStreetMap &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a></li>
+            </ul>
+            <p>Terrain map design &copy; <a href='http://eox.at'>EOX IT Services GmbH</a></p>
+          </div>
+        </div>
       </div>
 
-      {{ content }}
+      <div class="container">
+        {{ content }}
+      </div>
 
       <div class="footer">
-        <p><strong>About</strong></p>
-        <p><a href="https://plus.google.com/110741070615627148317" target="_blank">mk-archaeos</a> Gedanken und Notizen aus den Bereichen OpenSource,
-          Archäologie, GIS, Visualisierung, Programmieren, Datenbanken etc.</p>
-        <p>Alle eigenen Inhalte stehen unter einer <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/de/">Creative-Commons-Lizenz</a>,
-          jedoch können fremde Inhalte (speziell Videos, Photos und sonstige Bilder) unter einer anderen Lizenz stehen.</p>
+        <div class="container">
+          <p><strong>About</strong></p>
+          <p><a href="https://plus.google.com/110741070615627148317" target="_blank">mk-archaeos</a> Gedanken und Notizen aus den Bereichen OpenSource,
+            Archäologie, GIS, Visualisierung, Programmieren, Datenbanken etc.</p>
+          <p>Alle eigenen Inhalte stehen unter einer <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/de/">Creative-Commons-Lizenz</a>,
+            jedoch können fremde Inhalte (speziell Videos, Photos und sonstige Bilder) unter einer anderen Lizenz stehen.</p>
+        </div>
       </div>
     </div>
 
+    <script src="//maps.eox.at/dist/ol/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+      function toggle(e) { e.style.display = (e.style.display == 'block' ? 'none' : 'block'); }
+
+// Some defaults for various map layers
+layerDefaults = {
+  requestEncoding: 'REST',
+    attribution: '&copy; EOX IT Services GmbH',
+    url: [ 'http://a.tiles.maps.eox.at/wmts/','http://b.tiles.maps.eox.at/wmts/','http://c.tiles.maps.eox.at/wmts/','http://d.tiles.maps.eox.at/wmts/','http://e.tiles.maps.eox.at/wmts/' ],
+    matrixSet: 'WGS84',
+    style: 'default',
+    format: 'image/png',
+    resolutions: [ 0.70312500000000000000,0.35156250000000000000,0.17578125000000000000,0.08789062500000000000,0.04394531250000000000,0.02197265625000000000,0.01098632812500000000,0.00549316406250000000,0.00274658203125000000,0.00137329101562500000,0.00068664550781250000,0.00034332275390625000,0.00017166137695312500 ],
+    maxExtent: new OpenLayers.Bounds(-180,-85,180,90),
+    displayOutsideMaxExtent: false,
+    projection: new OpenLayers.Projection('EPSG:4326'),
+    gutter: 0,
+    buffer: 0,
+    units: 'dd',
+    transitionEffect: 'resize',
+    isphericalMercator: false,
+    isBaseLayer: false,
+    wrapDateLine: true,
+    zoomOffset: 0
+};
+
+var terrain = new OpenLayers.Layer.WMTS(OpenLayers.Util.applyDefaults({ name: 'Terrain', layer: 'terrain', isBaseLayer: true, attribution: "Terrain &copy; <a href='#' onClick='toggle(terrain_attribution)'>Various</a>" }, layerDefaults));
+var map = new OpenLayers.Map({ div: 'map', projection: 'EPSG:4326', displayProjection: 'EPSG:4326', restrictedExtent: new OpenLayers.Bounds(-720, -85, 720, 90) });
+map.addLayers([ terrain ]);
+map.setCenter(new OpenLayers.LonLat(16.3731,48.2083), 10);
+</script>
   </body>
 </html>
