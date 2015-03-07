@@ -16,20 +16,22 @@ Was willst eigentlich schreiben?
 
 - das entsprechende geojson-file sieht folgendermaßen aus:
 
-```json
+
+{% highlight json %}
 {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [16.3731,48.2083]
-            },
-            "properties": {
-                "prop0": "value0"
-            }
-        }
-    ]
+"type": "FeatureCollection",
+  "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [16.3731,48.2083]
+        },
+        "properties": {
+        "prop0": "value0"
+      }
+    }
+  ]
 }
-```
+{% endhighlight %}
+
