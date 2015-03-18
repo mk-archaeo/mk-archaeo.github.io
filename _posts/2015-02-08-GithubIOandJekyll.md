@@ -17,9 +17,9 @@ Was willst eigentlich schreiben?
 - das entsprechende geojson-file sieht folgendermaßen aus:
 
 
-{% highlight json %}
-{
-"type": "FeatureCollection",
+
+```json
+{"type": "FeatureCollection",
   "features": [
       {
         "type": "Feature",
@@ -33,5 +33,6 @@ Was willst eigentlich schreiben?
     }
   ]
 }
-{% endhighlight %}
+```
+
 

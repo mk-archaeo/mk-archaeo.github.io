@@ -1,1 +1,19 @@
-highlighter: pygments
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            M. Kultus
+tagline:          'Gedanken und Notizen zu...'
+description:      'Open Source, GIS, Archäologie...'
+url:              https://mk-archaeo.github.io
+
+author:
+  name:           'Marco Kultus'
+  url:            https://twitter.com/PascalPrecht
+
+github:
+  repo:           https://github.com/mk-archaeo
