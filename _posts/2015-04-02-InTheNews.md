@@ -1,7 +1,7 @@
 ---
 layout: post
 title: In the News 02.04.2015
-tags: opengeospatialdata choropleth-maps R-lang leaflet
+tags: opengeospatialdata choropleth-maps R-lang leaflet CartoDB
 ---
 
 - A new Journal:
@@ -14,7 +14,7 @@ tags: opengeospatialdata choropleth-maps R-lang leaflet
 
 - bivariate choropleth maps
     + <http://www.joshuastevens.net/cartography/make-a-bivariate-choropleth-map/>
-        * “I’m not bivariate, but I am curious.” 
+        * “I’m not bivariate, but I am curious.”
 
 * * * *
 
