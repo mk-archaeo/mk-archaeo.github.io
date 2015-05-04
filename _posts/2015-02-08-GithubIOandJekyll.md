@@ -9,6 +9,11 @@ tags: github jekyll
 Was willst eigentlich schreiben?
 -->
 
+- {>>simple <<}
+- schreiben in [Markdown]() {>>url einfügen <<}
+    + Jekyll parst diese und macht daraus eine html-Datei
+- alle Veränderungen werden festgehalten, da das Ganze auf [git]() basiert
+
 - Möglichkeit mittels geoJson-Dateien Karten einzubinden
     + siehe [Mapping geoJSON files on GitHub](https://help.github.com/articles/mapping-geojson-files-on-github/)
 
