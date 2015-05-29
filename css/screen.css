@@ -99,6 +99,9 @@ ul.posts a:visited {
   margin-bottom: 2em;
   padding-top: 30px;
   padding-bottom: 20px;
+  border-bottom-width: 1.5px;
+  border-bottom-color: #6b6b6b;
+  border-bottom-style: solid;
 }
 
 .title p {
@@ -131,8 +134,10 @@ ul.posts a:visited {
 .site .footer {
   font-size: 80%;
   color: #666;
-  border-top: 4px solid #eee;
+  background-color: #F5F5F5;
+  border-top: 1px solid #6b6b6b;
   margin-top: 2em;
+  padding-top: 5px;
   /*overflow: hidden;*/
 }
 
