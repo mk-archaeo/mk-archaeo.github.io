@@ -14,7 +14,7 @@ Was willst eigentlich schreiben?
     + Jekyll parst diese und macht daraus eine html-Datei
 - alle Veränderungen werden festgehalten, da das Ganze auf [git]() basiert
 
-- Möglichkeit mittels geoJson-Dateien Karten einzubinden
+- Möglichkeit mittels geoJSON-Dateien Karten einzubinden
     + siehe [Mapping geoJSON files on GitHub](https://help.github.com/articles/mapping-geojson-files-on-github/)
 
 <script src="https://embed.github.com/view/geojson/mk-archaeo/mk-archaeo.github.io/master/assets/geoJsonFiles/example.geojson?height=300&width=500"></script>
