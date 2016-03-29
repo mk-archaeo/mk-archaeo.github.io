@@ -8,7 +8,8 @@ $("document").ready(function() {
       $(this).attr("href", "http://www.jekyllrb.com");
     }
     else {
-      $(this).attr("href", "http://www.google.com/search?q=" + $(this).text().trim());
+      // $(this).attr("href", "http://www.google.com/search?q=" + $(this).text().trim());
+      $(this).attr("href", "../../../../tags/index.html#" + $(this).text().trim());
     }
   });
 });

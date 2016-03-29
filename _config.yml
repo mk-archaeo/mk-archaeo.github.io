@@ -5,6 +5,10 @@ highlighter:      rouge
 # Permalinks
 permalink:        pretty
 
+# pagination
+paginate: 4
+paginate_path: "/blog/page:num/"
+
 # Setup
 title:            Gedanken und Notizen zu ...
 tagline:          'Gedanken und Notizen zu...'
