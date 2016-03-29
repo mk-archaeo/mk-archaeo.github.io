@@ -1,6 +1,6 @@
 # Dependencies
 markdown:         redcarpet
-highlighter:      pygments
+highlighter:      rouge
 
 # Permalinks
 permalink:        pretty
@@ -13,7 +13,7 @@ url:              https://mk-archaeo.github.io
 
 author:
   name:           'Marco Kultus'
-  url:            https://twitter.com/PascalPrecht
+  url:            https://twitter.com/mk-archaeo
 
 github:
   repo:           https://github.com/mk-archaeo
